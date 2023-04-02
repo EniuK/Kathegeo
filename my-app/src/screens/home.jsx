@@ -1,5 +1,10 @@
 import { Grid, Stack, Box } from "@mui/material";
 import "./home.css";
+import ReactDOM from "react-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import { AutoRotatingCarousel } from "material-auto-rotating-carousel";
+
 const HomeScreen = () => {
   return (
     <Grid container xs={12}>
@@ -132,11 +137,11 @@ const HomeScreen = () => {
         direction="row"
         mt={10}
         xs={12}
-        justifyContent="space-evenly"
+        justifyContent="center"
         alignItems="center"
         height="50vh"
       >
-        <Box height="100%" width="25vw">
+        <Box height="100%" width="25vw" bgcolor={"white"}>
           <Box height="100%">
             <Box
               height={"30%"}
@@ -160,7 +165,7 @@ const HomeScreen = () => {
             </Box>
           </Box>
         </Box>
-        <Box height="100%" width="25vw">
+        <Box height="100%" mr={7} ml={7} width="25vw" bgcolor={"white"}>
           {" "}
           <Box height="100%">
             <Box
@@ -185,7 +190,7 @@ const HomeScreen = () => {
             </Box>
           </Box>
         </Box>
-        <Box height="100%" width="25vw">
+        <Box height="100%" width="25vw" bgcolor={"white"}>
           {" "}
           <Box height="100%">
             <Box
@@ -219,33 +224,39 @@ const HomeScreen = () => {
         justifyContent="space-evenly"
         alignItems="center"
         height="50vh"
+        mb={20}
       >
-        <Box>Random chat photo</Box>
+        <Box width={"100vw"} pr={50}>
+          <img src="../../assets/Group28.png" alt="" />
+        </Box>
+        <Box width={"100vw"} pl={50}>
+          <img src="../../assets/Group9.png" alt="" />
+        </Box>
       </Grid>
-      <Grid
-        container
-        xs={12}
-        justifyContent="space-evenly"
-        alignItems="center"
-        height="50vh"
-        pl={"20%"}
-      >
-        <Grid item xs={12}>
-          <Box fontSize={50} textAlign={"start"}>
-            Testimonials
-          </Box>
-        </Grid>
-        <Grid
-          direction="row"
-          xs={12}
-          justifyContent="space-evenly"
-          alignItems="center"
-          height="50vh"
-        >
-          <Box>PHONE PHOTO</Box>
-          <Box></Box>
-        </Grid>
-      </Grid>
+
+      <Carousel>
+        <Box>
+          <img
+            src="../..//assets/Testimonials/01.png"
+            alt="testimonails_photo"
+          />
+          <p className="legend">Legend 1</p>
+        </Box>
+        <Box>
+          <img
+            src="../..//assets/Testimonials/01.png"
+            alt="testimonails_photo"
+          />
+          <p className="legend">Legend 2</p>
+        </Box>
+        <Box>
+          <img
+            src="../..//assets/Testimonials/01.png"
+            alt="testimonails_photo"
+          />
+          <p className="legend">Legend 3</p>
+        </Box>
+      </Carousel>
     </Grid>
   );
 };
